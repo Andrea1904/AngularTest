@@ -1,0 +1,43 @@
+<h1> hola</h1>
+<h1>{{ 'Hola'.repeat (5) }}</h1>
+
+<!-- Control de estados -->
+<button [disabled] ="btnGuardar">Enviar a Guardar</button>
+<input type = "text"  value="Lopez" />
+
+<br>
+
+<progress max="100" value={{persona.age}}></progress>
+
+<!-- Se llama la variable desde el app.component.ts que esta en la clase-->
+<h3>Hola {{ name }}  y ajá {{ age }}</h3>
+
+
+
+<h1>Eventos ...</h1>
+<button [disabled] ="btnGuardar">Enviar a Guardar</button>
+<button (click)="activarBoton()"> ActivarBoton</button>
+
+<p>Edad {{persona.age}}></p>
+<button (click)="ageEvent()"> AumentarEdad</button>
+
+
+<!-- Evento con estilos forma nativa lo haces con el $event para que el component tenga el
+componente -->
+
+
+<div class="box" (scroll)="onScroll($event)">
+  <p>Epa la arepa ... seco maraco seco </p>
+</div>
+
+<!--Ahora es un evento de entreda -->
+<p>Nombre {{persona.name}}</p>
+<input type="text" [value]="persona.name" (keyup)="cambiarNombre($event)"/>
+
+
+
+<!--NgModel -->
+<p>Ng Model  {{persona.name}}</p>
+<!--NgModel Paquete incremental es decir toca instalarlo
+-->
+<input type="text" [(ngModel)]="persona.name"/>
